@@ -47,6 +47,7 @@ public:
     void stopRecording()  { recording.store (false); }
     bool isRecording() const { return recording.load(); }
     void clearRecording() { recorded.clear(); }
+bool hasRecording() const { return ! recorded.empty(); }
     int  getNumRecordedNotes() const;
     bool writeMidiFile (const juce::File&) const;
     int  getCurrentNote() const { return currentNoteDisplay.load(); }
